@@ -1,0 +1,568 @@
+@font-face {
+    font-family: 'ClashDisplay';
+    src: url(fonts/ClashDisplay-Variable.ttf) format('truetype');
+}
+
+html{
+    box-sizing: border-box;
+}
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+    margin: 0;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+body{
+    font-family: 'ClashDisplay', sans-serif;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+.container{
+    max-width: 1140px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+.header{
+    background-image: url(img/header_bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center top 256px; /* Смещение от верха */
+    background-size: cover;
+    overflow: hidden;
+    height: calc(100vh + 256px); /* Увеличиваем высоту */
+    margin-bottom: 50px;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 60%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 60%;
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(255, 255, 255, 0.3) 0%,
+            rgba(255, 255, 255, 0.1) 22%,
+            transparent 81%
+        );
+    filter: blur(40px);
+    z-index: 0;
+    pointer-events: none;
+}
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%; /* Высота затемненной области */
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.4) 50%,
+        transparent 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+.header__top{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    margin-bottom: 120px;
+    padding-top: 24px;
+}
+.menu__list{
+    display: flex;
+    gap: 32px;
+}
+.header__btn{
+    justify-self: end;
+    display: flex;
+    padding: 19px 26px;
+    border: 1px solid #FFFFFF;
+    border-radius: 8px;
+}
+.header__title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 45px;
+    font-size: 96px;
+    font-weight: 500;
+}
+.header__text{
+    margin: 0 auto;
+    text-align: center;
+    max-width: 517px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 48px;
+}
+.connect{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+
+}
+.header__connect{
+    font-size: 20px;
+    font-weight: 500;
+
+}
+.detailing{
+    margin-bottom: 121px;
+}
+.detailing__top{
+    border-bottom: 1px solid #999999;
+}
+.detailing__text{
+    font-size: 20px;
+    font-weight: 500;
+    color: #999999;
+    margin-bottom: 40px;
+}
+.detailing__desc{
+    display: flex;
+    gap: 127px;
+    align-items: center;
+    margin-bottom: 80px;
+    padding-top: 48px;
+}
+.deteiling__desc-title{
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1.125;
+
+}
+.detailing__desc-text{
+    max-width: 544px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #999999;
+}
+.detailing__gallery-item img{
+    border-radius: 9px;
+}
+.detailing_gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 32px;
+    width: 100%;
+}
+.detailing__gallery-title{
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0;
+    padding-top: 32px;
+    margin-bottom: 20px;
+}
+.detailing__gallery-text{
+    margin: 0 0 32px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #999999;
+    line-height: 1.5;
+}
+.detailing__gallery-btn{
+    display: flex;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.video{
+    margin-bottom: 200px;
+}
+.video__inner{
+    background-image: url(img/video_bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding: 258px 492px;
+    width: 100%;
+    height: 600px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.video__inner-play{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    cursor: pointer;
+}
+.play{
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+}
+.video__play{
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: 500;
+}
+.your__car-inner{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 200px;
+}
+.inner__your img{
+    width: 100%;
+    padding-top: 64px;
+}
+.inner__your{
+    border-right: 1px solid rgb(255, 255, 255, .25);
+    padding-right: 111px;
+}
+.inner__title{
+    font-size: 48px;
+    font-weight: 500;
+    max-width: 397px;
+    margin: 0;
+}
+.inner__description{
+    padding-left: 112px;
+    display: flex;
+    flex-direction: column;
+}
+.inner__items{
+    border-top: 1px solid rgb(255, 255, 255, .25);
+    padding: 40px 0;
+}
+.inner__items:first-child{
+    padding-top: 0;
+    border: none;
+}
+
+.items__title{
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+.items__title-title{
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 2.25;
+}
+.inner__items-text{
+    font-size: 16px;
+    font-weight: 500;
+    color: #999999;
+    line-height: 1.5;
+}
+.luxury{
+    margin-bottom: 81px;
+}
+.inner_get{
+    border: none;
+    display: flex;
+    gap: 16px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.luxury__inner {
+    background-image: url(img/luxary-car.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.luxury__inner{
+    padding: 100px 631px 0 64px;
+}
+.luxury__inner-title{
+    font-size: 48px;
+    font-weight: 500;
+    max-width: 425px;
+    margin-bottom: 40px;
+}
+.luxury__inner-text{
+    font-size: 16px;
+    font-weight: 500;
+    color: #CCCCCC;
+    margin-bottom: 48px;
+}
+.luxury__inner-btn{
+    display: flex;
+    gap: 16px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.footer__foter{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 80px;
+}
+.footer__details-title{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 32px;
+}
+.footer__details-text{
+    max-width: 352px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #999999;
+}
+.footer__details-nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.footer__details-inner{
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.footer__details-inner-title{
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #999999;
+}
+.footer__bottom{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 64px;
+}
+.footer__bottom-inner{
+    display: flex;
+    gap: 32px;
+}
+.footer__link{
+    font-size: 16px;
+    font-weight: 500;
+}
+.footer__bottom-link{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+
+
+/* Планшеты (ландшафтный режим) */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .header__title {
+        font-size: 80px;
+    }
+
+    .detailing__desc {
+        gap: 80px;
+    }
+
+    .video__inner {
+        padding: 200px 400px;
+    }
+
+    .luxury__inner {
+        padding: 80px 400px 0 64px;
+    }
+}
+
+/* Планшеты (портретный режим) */
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+
+    .header__title {
+        font-size: 64px;
+    }
+
+    .header__top {
+        margin-bottom: 80px;
+    }
+
+    .detailing__desc {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .deteiling__desc-title {
+        font-size: 36px;
+    }
+
+    .detailing_gallery {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .video__inner {
+        padding: 150px 300px;
+        height: 400px;
+    }
+    .video__play{
+        font-size: 15px;
+        text-align: center;
+    }
+    .your__car-inner {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .inner__your {
+        border-right: none;
+        border-bottom: 1px solid rgb(255, 255, 255, .25);
+        padding-right: 0;
+        padding-bottom: 60px;
+    }
+
+    .inner__description {
+        padding-left: 0;
+    }
+
+    .luxury__inner {
+        padding: 60px 30px;
+        text-align: left;
+    }
+
+    .luxury__inner-title {
+        font-size: 36px;
+    }
+
+    .footer__foter {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .footer__details-nav {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+}
+
+/* Мобильные устройства (ландшафтный режим) */
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px;
+    }
+
+    .header {
+        height: auto;
+        min-height: 100vh;
+        margin-bottom: 40px;
+    }
+
+    .header__top {
+        grid-template-columns: auto 1fr;
+        gap: 20px;
+    }
+
+    .menu {
+        order: 3;
+        grid-column: 1 / -1;
+        margin-top: 20px;
+    }
+
+    .menu__list {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .header__title {
+        font-size: 48px;
+        margin-bottom: 30px;
+    }
+
+    .header__text {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    .detailing {
+        margin-bottom: 80px;
+    }
+
+    .video__inner {
+        padding: 100px 200px;
+        height: 300px;
+    }
+.your__car-inner{
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    .footer__details-nav {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer__bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer__bottom-inner {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+
+@media (max-width: 450px){
+    .header__title{
+        font-size: 28px;
+    }
+    .header__btn{
+        padding: 15px 20px;
+        font-size: 14px;
+    }
+    .menu__list{
+        gap: 15px;
+    }
+    .video__inner{
+        padding: 80px 20px;
+        height: 250px;
+    }
+}
+
+@media (min-height: 800px) and (max-width: 992px) {
+    .header {
+        height: 100vh;
+    }
+}
+
+
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .header {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .header__top {
+        margin-bottom: 40px;
+        padding-top: 15px;
+    }
+
+    .header__title {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .header__text {
+        margin-bottom: 20px;
+    }
+}
